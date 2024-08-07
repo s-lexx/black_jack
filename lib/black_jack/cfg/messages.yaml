@@ -1,0 +1,20 @@
+user:
+  sit: 'Пропустить ход'
+  hit: 'Взять карту'
+  open: 'Открыть карты'
+dealer:
+  sit: 'Дилер пропустил ход'
+  hit: 'Дилер взял карту'
+black_jack:
+  continue: 'Продолжить игру'
+  exit: 'Завершить игру'
+view:
+  get_user_name: 'Введите свое имя:'
+  end_game: 'Игра окончена!'
+  user_score: 'Счет игрока'
+  select_actions: 'Выберите действие:'
+  more_turn: 'еще партию?'
+  user_balance: 'ваш баланс:'
+  drawn_game: 'Ничья!'
+  turn_winner: 'В этом раунде победил'
+  wrong_input: 'Неправильно! Нужно ввести число от 1 до'
