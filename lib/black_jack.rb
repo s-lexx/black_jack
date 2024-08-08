@@ -56,7 +56,6 @@ module BlackJack
       flush_cards
       @deck = Deck.new
       players.each_value do |player|
-        player.sit = false
         2.times { player.hit(@deck.deal) }
       end
     end
@@ -68,7 +67,6 @@ module BlackJack
 
     def bet
       players.each_value { |player| player.wallet.transfer(@bank, BET) }
-      puts "user - #{user.wallet.balance}, dealer #{dealer.wallet.balance}, bank #{@bank.balance}"
     end
 
     def turn_preparation

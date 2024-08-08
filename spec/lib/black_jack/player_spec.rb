@@ -25,14 +25,6 @@ describe BlackJack::Player do
     end
   end
 
-  describe 'sit' do
-    it 'allows change value' do
-      expect(player).not_to be_sit
-      player.sit = true
-      expect(player).to be_sit
-    end
-  end
-
   describe 'hide_cards?' do
     it 'allows change value' do
       expect(player).not_to be_hide_cards

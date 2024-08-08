@@ -27,11 +27,15 @@ module BlackJack
     end
 
     def user_turn(variants)
-      variants[user_input(@messages[:view][:select_actions], @messages[:user].values) - 1]
+      user_messages = @messages[:user].select { |key, _| variants.include?(key) }
+      selection = user_input(@messages[:view][:select_actions], user_messages.values) - 1
+      variants[selection]
     end
 
     def end_game?(player)
-      user_input("#{@user_name}, #{@messages[:view][:user_balance]} #{player.wallet.balance}, #{@messages[:view][:more_turn]}", @messages[:black_jack].values) - 1 == 1
+      user_balance = player.wallet.balance
+      description = "#{@user_name}, #{@messages[:view][:user_balance]} #{user_balance}, #{@messages[:view][:more_turn]}"
+      user_input(description, @messages[:black_jack].values) - 1 == 1
     end
 
     def end_game

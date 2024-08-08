@@ -3,7 +3,7 @@
 module BlackJack
   class Player
     attr_reader :cards, :name, :wallet
-    attr_writer :hide_cards, :sit
+    attr_writer :hide_cards
 
     ACE_ADDITION = 10
     SAFE_LIMIT = 11
@@ -11,7 +11,6 @@ module BlackJack
     START_BALANCE = 100
 
     def initialize(name)
-      #@balance = 100
       @wallet = Wallet.new(START_BALANCE)
       @cards = []
       @name = name
@@ -27,10 +26,6 @@ module BlackJack
 
     def hit(card)
       @cards << card
-    end
-
-    def sit?
-      @sit
     end
 
     def bet(amount)
