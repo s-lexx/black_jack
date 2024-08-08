@@ -84,7 +84,9 @@ module BlackJack
 
         break if user_choice == :open
 
-        @view.dealer_turn(dealer.choice) if time.zero?
+        dealer_choice = dealer.choice
+        dealer.hit(@deck.deal) if dealer_choice == :hit
+        @view.dealer_turn(dealer_choice) if time.zero?
         actions.delete(:sit)
         break if user.cards.size == HAND_SIZE
       end
